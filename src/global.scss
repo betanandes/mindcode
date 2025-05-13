@@ -37,4 +37,10 @@
 @import "@ionic/angular/css/palettes/dark.system.css";
 /* src/global.scss */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
+@font-face {
+    font-family: 'CocoSharp';
+    src: url('/assets/fonts/Feather-Bold.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+  }
+  
