@@ -1,27 +1,60 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+ion-content {
+  --background: transparent;
+  --overflow: hidden;
+  
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
+.home-screen {
+  overflow: hidden;
+  position: relative;
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+  .background-image {
+    position: absolute;
+    top: 50%;
+    left: 65%;
+    width: 1128px;
+    height: 960px;
+    transform: translate(-50%, -50%);
+    background-image: url('/assets/background.jpg');
+    background-size: cover; // ou 'contain', dependendo do efeito que quer
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 0;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1128px;
+    height: 960px;
+    opacity: 80%;
+    z-index: 1;
+  }
+  
 
-  color: #8c8c8c;
+  .container {
+    position: relative;
+    z-index: 2; // Garante que o conteúdo fique acima da imagem e da camada
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-  margin: 0;
-}
+    .logo {
+      width: 250px;
+      max-width: 80%;
+    }
 
-#container a {
-  text-decoration: none;
+    .sponsored {
+      position: absolute;
+      bottom: 55px;
+      color: #fff;
+      font-size: 14px;
+      font-family:'Poppins', sans-serif;
+      text-align: center;
+    }
+  }
 }
