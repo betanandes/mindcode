@@ -10,7 +10,11 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },  {
+    path: 'login-options',
+    loadChildren: () => import('./login-options/login-options.module').then( m => m.LoginOptionsPageModule)
   },
+
 ];
 
 @NgModule({
