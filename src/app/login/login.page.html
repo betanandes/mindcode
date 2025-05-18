@@ -1,0 +1,32 @@
+<ion-content class="login-content" fullscreen>
+  <div class="login-box">
+    <h1>Login</h1>
+    <hr style="background-color: black;">
+
+    <form>
+      <ion-item lines="none">
+        <ion-icon name="person" slot="start"></ion-icon>
+        <ion-input placeholder="Usuário"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-icon name="at" slot="start"></ion-icon>
+        <ion-input type="email" placeholder="Senha"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none" class="linkSenha">
+        <ion-router-link routerLink="/esqueci-minha-senha" slot="end" style="color: #CE5EED; text-decoration: none;">
+          Esqueci minha senha
+        </ion-router-link>
+      </ion-item>
+
+      <ion-button expand="block" fill="clear" class="btn-acessar">
+        Acessar
+      </ion-button>
+    </form>
+
+    <p class="login-text">
+      Ainda não possui conta? <a routerLink="/home">Cadastre-se</a>
+    </p>
+  </div>
+</ion-content>

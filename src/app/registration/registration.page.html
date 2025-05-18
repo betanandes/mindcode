@@ -1,0 +1,31 @@
+<ion-content class="cadastro-content" fullscreen>
+  <div class="cadastro-box">
+    <h1>Cadastro</h1>
+    <hr style="background-color: black;">
+
+    <form>
+      <ion-item lines="none">
+        <ion-icon name="person" slot="start"></ion-icon>
+        <ion-input placeholder="Escolha um usuário"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-icon name="at" slot="start"></ion-icon>
+        <ion-input type="email" placeholder="Escolha um e-mail"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+        <ion-input type="password" placeholder="Escolha uma senha" ></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" fill="clear" class="btn-cadastrar">
+        Cadastrar
+      </ion-button>
+    </form>
+
+    <p class="login-text">
+      Já possui conta? <a routerLink="/login">Faça login.</a>
+    </p>
+  </div>
+</ion-content>
