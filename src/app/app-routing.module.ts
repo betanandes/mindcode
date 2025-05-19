@@ -10,7 +10,8 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
-  },  {
+  },
+  {
     path: 'login-options',
     loadChildren: () => import('./login-options/login-options.module').then( m => m.LoginOptionsPageModule)
   },
@@ -23,8 +24,8 @@ const routes: Routes = [
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'main-screen',
-    loadChildren: () => import('./main-screen/main-screen.module').then( m => m.MainScreenPageModule)
+    path: 'start',
+    loadChildren: () => import('./start/start.module').then( m => m.StartPageModule)
   },
 
 ];
