@@ -90,10 +90,11 @@ ion-button.custom-btn {
 ion-toolbar.bottom-bar {
   --background: #2F324E;
   // border-radius: 0 0 1rem 1rem;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
 
   ion-button {
     color: #ffffff;
     font-size: 1.4rem;
+    margin-bottom: 10px;
   }
 }
