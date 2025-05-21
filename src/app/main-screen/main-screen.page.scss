@@ -30,52 +30,65 @@ ion-header.custom-header {
   padding: 1.5rem;
 
   .category-button {
-    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
 
-    ion-button.custom-btn {
-      width: 100%;
-      height: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-weight: 700;
-      font-size: 1.1rem;
-      border-radius: 16px;
-      padding: 1.2rem 1.5rem;
-      box-shadow: 2px 4px 6px #00000033;
-      text-transform: none;
-      letter-spacing: 0;
+ion-button.custom-btn {
+  width: 100%;
+  max-width: 320px;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  border-radius: 16px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.25);
+  text-transform: none;
+  letter-spacing: 0;
+  --border-radius: 16px;
+  --box-shadow: none;
 
-      .text {
-        flex: 1;
-        text-align: left;
-      }
+  // Isso garante que TODA a área fique pintada
+  --background: transparent;
+  background-color: var(--custom-bg, #2F324E); // usa uma variável custom
 
-      ion-icon {
-        font-size: 1.5rem;
-        margin-left: 1rem;
-      }
+  color: white; 
+
+  .text {
+    flex: 1;
+    text-align: left;
+  }
+
+  ion-icon {
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    padding-left: 1rem;
+    border-left: 2px solid rgba(255, 255, 255, 0.4);
     }
-  }
-
-  .front ion-button {
-    background-color: #2F324E;
-    color: #ffffff;
-  }
-
-  .back ion-button {
-    background-color: #da69e0;
-    color: #ffffff;
-  }
-
-  .full ion-button {
-    background-color: #2F324E;
-    color: #ffffff;
   }
 }
 
-.bottom-bar {
-  background-color: #2F324E;
+  .front custom-btn {
+    --background: #2F324E;
+    --color: #ffffff;
+  }
+
+  .back custom-btn {
+    --background: #da69e0;
+    --color: #ffffff;
+  }
+
+  .full custom-btn {
+    --background: #2F324E;
+    --color: #ffffff;
+  }
+}
+
+ion-toolbar.bottom-bar {
+  --background: #2F324E;
   border-radius: 0 0 1rem 1rem;
   padding: 0.5rem 1rem;
 
