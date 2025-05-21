@@ -33,6 +33,7 @@ ion-header.custom-header {
     display: flex;
     justify-content: center;
     margin-bottom: 2rem;
+    margin-top: 100px;
 
 ion-button.custom-btn {
   width: 100%;
@@ -41,34 +42,34 @@ ion-button.custom-btn {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem 1.5rem;
-  border-radius: 16px;
+  // padding: 0 1.5rem;
+  border-radius: 24px;
   font-weight: bold;
   font-size: 1.1rem;
-  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.25);
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.697);
   text-transform: none;
   letter-spacing: 0;
   --border-radius: 16px;
-  --box-shadow: none;
+  background-color: var(--custom-bg, #2F324E);
+  color: white;
+}
 
-  // Isso garante que TODA a área fique pintada
-  --background: transparent;
-  background-color: var(--custom-bg, #2F324E); // usa uma variável custom
+ion-button.custom-btn .text {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
 
-  color: white; 
+ion-button.custom-btn ion-icon {
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  padding-left: 1rem;
+  border-left: 2px solid rgba(255, 255, 255, 0.4);
+}
 
-  .text {
-    flex: 1;
-    text-align: left;
-  }
-
-  ion-icon {
-    font-size: 1.5rem;
-    margin-left: 1rem;
-    padding-left: 1rem;
-    border-left: 2px solid rgba(255, 255, 255, 0.4);
-    }
-  }
 }
 
   .front custom-btn {
@@ -89,7 +90,6 @@ ion-button.custom-btn {
 
 ion-toolbar.bottom-bar {
   --background: #2F324E;
-  // border-radius: 0 0 1rem 1rem;
   padding: 1rem 1rem;
 
   ion-button {
