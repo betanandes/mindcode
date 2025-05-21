@@ -1,5 +1,5 @@
 .fundo {
-  --ion-background-color: #24244f; // Cor de fundo escura
+  --ion-background-color: #2F324E;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,14 +10,14 @@
 .texto-jogo {
   font-size: 22px;
   font-weight: bold;
-  color: #ffffff; // Cor do texto para contraste
+  color: #ffffff; 
   margin-bottom: 5px;
-  margin-top: 320px;
+  margin-top: 370px;
   text-align: center;
 }
 
 ion-button {
-  --background: #c16ec9; // Cor do botão
+  --background: #CE5EED;
   width: 100px;
   height: 50px;
   font-size: 20px;
@@ -30,5 +30,5 @@ ion-button {
   --border-radius: 10px !important;
   text-align: center;
   align-items: center;
-  color: #ffffff; // Cor do texto do botão
+  color: #ffffff;
 }
