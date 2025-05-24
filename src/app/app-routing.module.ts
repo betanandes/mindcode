@@ -30,7 +30,11 @@ const routes: Routes = [
     {
     path: 'main-screen',
     loadChildren: () => import('./main-screen/main-screen.module').then( m => m.MainScreenPageModule)
+  },  {
+    path: 'front-mode',
+    loadChildren: () => import('./front-mode/front-mode.module').then( m => m.FrontModePageModule)
   },
+
 
 ];
 
