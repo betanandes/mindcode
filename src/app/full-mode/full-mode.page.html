@@ -1,0 +1,57 @@
+<ion-header class="custom-header">
+  <div class="timer-container">
+    <ion-icon name="time-outline" style="color: white"></ion-icon>
+    <span style="padding-left: 8px; color: white">{{ timeLeft }}s</span>
+  </div>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100;300;400;500&family=Ubuntu:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div class="question" style="margin-top: 60px; margin-bottom: 85px;">
+    <h2>{{ currentQuestion.question }}</h2>
+  </div>
+
+  <div class="options-wrapper" style="background: #474a6e;">
+    <div class="answers">
+      <ion-card *ngFor="let option of currentQuestion.options" [ngClass]="{
+    'correct': selectedOption === option.letter && option.letter === currentQuestion.correct,
+    'wrong': selectedOption === option.letter && option.letter !== currentQuestion.correct
+  }" (click)="selectOption(option.letter)" class="option">
+        <div class="option-content">
+          <div class="option-letter">{{ option.letter }}</div>
+          <div class="option-separator"></div>
+          <div class="option-text">{{ option.text }}</div>
+        </div>
+      </ion-card>
+
+    </div>
+  </div>
+
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar class="bottom-bar">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/main-screen">
+        <ion-icon name="home-outline" style="color: white;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons style="justify-content:center">
+      <ion-button>
+        <ion-icon name="trophy-outline" style="color: white;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="settings-outline" style="color: white;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

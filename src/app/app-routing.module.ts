@@ -34,6 +34,10 @@ const routes: Routes = [
     path: 'front-mode',
     loadChildren: () => import('./front-mode/front-mode.module').then( m => m.FrontModePageModule)
   },
+  {
+    path: 'full-mode',
+    loadChildren: () => import('./full-mode/full-mode.module').then( m => m.FullModePageModule)
+  },
 
 
 ];
