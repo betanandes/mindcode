@@ -38,6 +38,10 @@ const routes: Routes = [
     path: 'full-mode',
     loadChildren: () => import('./full-mode/full-mode.module').then( m => m.FullModePageModule)
   },
+  {
+    path: 'back-mode',
+    loadChildren: () => import('./back-mode/back-mode.module').then( m => m.BackModePageModule)
+  },
 
 
 ];
