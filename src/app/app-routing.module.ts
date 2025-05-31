@@ -42,6 +42,10 @@ const routes: Routes = [
     path: 'back-mode',
     loadChildren: () => import('./back-mode/back-mode.module').then( m => m.BackModePageModule)
   },
+  {
+    path: 'config-page',
+    loadChildren: () => import('./config-page/config-page.module').then( m => m.ConfigPagePageModule)
+  },
 
 
 ];

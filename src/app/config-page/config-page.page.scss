@@ -1,0 +1,95 @@
+ion-content.main-content {
+  background: #ffffff;
+  padding: 0px;
+
+  .category-button {
+    display: flex;
+    justify-content: center;
+
+}
+}
+
+ion-toolbar {
+  --background: #2F324E;
+  padding: 10px;
+
+  ion-button {  //seta VOLTAR
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: -3px;
+  }
+}
+
+ion-avatar {  //perfil
+  align-items: center;
+  margin-left: 140px;
+  margin-top: 30px;
+  width: 135px;  //largura do ícone perfil
+  height: 130px;  //altura do ícone perfil
+  
+}
+
+ion-icon[name="create-outline"] { //ícone de editar perfil
+  padding-left: 65%;
+  font-size: 30px;
+  margin-bottom: 50px;
+  margin-left: -8px;
+  margin-top: -20px;
+}
+
+ion-title {  //Configurações
+  color: #ffffff;
+  align-items: center;
+  margin-left: 40px;
+  font-size: 23px;
+  background-color: #2F324E;
+  margin-bottom: -10px;
+  font-weight: bold;
+}
+
+
+.usuario, .nome, .sobre {  //campo label
+  width: 320px; //tamanho da label
+  height: 45px; //altura da label
+  margin-bottom: 20px;
+  margin-top: 10px;
+  align-items: center;
+  margin-left: 45px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.botao-sair {
+  --background: #2F324E;
+  display: flex;
+  margin-top: -80px;
+  margin-bottom: 100px;
+  height: 40px;
+  width: 180px;
+  margin-left: 100px;
+  border-radius: 12px !important;
+  align-items: center;
+}
+
+.main-content div {  //Seu usuário, Seu nome e Sobre você.
+  text-align: inherit ;
+  font-weight: bold;
+  margin-left: 50px;
+}
+
+ion-button { //Botão de SAIR
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+ion-label {  //insta, email e github
+  display: flex;
+  align-items: center;
+  margin-left: 20px;  
+  text-align: inherit;
+  background-color: rgb(220, 223, 223);
+  
+}
