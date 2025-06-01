@@ -2,23 +2,32 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-button routerLink="/main-screen">
-        <ion-icon name="arrow-back" style="font-size: 30px;
-        padding-top: 10px;"></ion-icon>
+        <ion-icon name="arrow-back" style="font-size: 30px; padding-top: 10px;"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title style="padding-top: 10px;
-    padding-left: 75px;">Configurações</ion-title>
+    <ion-title style="padding-top: 10px; padding-left: 75px;">Configurações</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="main-content">
   <div class="profile-section">
-    <ion-avatar>
-      <img alt="perfil" [src]="avatarUrl" />
-    </ion-avatar>
-    <ion-icon name="create-outline" class="edit-icon" (click)="fileInput.click()"></ion-icon>
-    <input type="file" accept="image/*" #fileInput hidden (change)="onFileSelected($event)" />
-  </div>
+  <ion-avatar>
+    <img alt="perfil" [src]="avatarUrl" />
+  </ion-avatar>
+
+  <!-- Ícone de editar (já existia) -->
+  <ion-icon name="create-outline" class="edit-icon" (click)="fileInput.click()"></ion-icon>
+  <input type="file" accept="image/*" #fileInput hidden (change)="onFileSelected($event)" />
+
+  <!-- Ícone de remover (lixeira) -->
+  <ion-icon
+    *ngIf="isCustomImage"
+    name="trash-outline"
+    class="delete-icon"
+    (click)="removePhoto()"
+  ></ion-icon>
+</div>
+
 
   <div class="info-section">
     <label>Seu usuário</label>
