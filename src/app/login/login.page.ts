@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebase';
+import { AuthService } from '../../auth.service'; // ajuste caminho conforme sua estrutura
 import { ToastController } from '@ionic/angular';
 
 @Component({
@@ -17,7 +18,8 @@ export class LoginPage implements OnInit {
 
   constructor(
     private router: Router,
-    private toastController: ToastController
+    private toastController: ToastController,
+    private authService: AuthService  // ADICIONEI aqui
   ) {}
 
   ngOnInit() {}
@@ -31,8 +33,12 @@ export class LoginPage implements OnInit {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, this.email, this.password);
       console.log('Usuário logado:', userCredential.user);
+
+      // Guarda o usuário no serviço pra usar na config-page
+      this.authService.setUser(userCredential.user);
+
       this.presentToast('Login realizado com sucesso!');
-      this.router.navigate(['/main-screen']);
+      this.router.navigate(['/config-page']); // redireciona pra config-page
     } catch (error: any) {
       console.error('Erro ao logar:', error);
       switch (error.code) {

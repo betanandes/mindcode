@@ -31,13 +31,23 @@
 
   <div class="info-section">
     <label>Seu usuário</label>
-    <ion-input class="info-input" placeholder="Digite seu usuário"></ion-input>
-
-    <label>Seu nome</label>
-    <ion-input class="info-input" placeholder="Digite seu nome"></ion-input>
+    <ion-input
+      [(ngModel)]="username"
+      class="info-input"
+      placeholder="Digite seu usuário"
+    ></ion-input>
 
     <label>Sobre você</label>
-    <ion-textarea class="info-input" placeholder="Escreva algo sobre você" auto-grow="true"></ion-textarea>
+    <ion-textarea
+      [(ngModel)]="about"
+      class="info-input"
+      placeholder="Escreva algo sobre você"
+      auto-grow="true"
+    ></ion-textarea>
+  </div>
+
+  <div class="button-section">
+    <ion-button (click)="saveProfile()" class="botao-salvar">SALVAR</ion-button>
   </div>
 
   <div class="contact-section">

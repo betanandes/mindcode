@@ -1,7 +1,7 @@
 export const environment = {
   production: false,
   firebase: {
-  apiKey: "AIzaSyATDeiPlDtP0flP6l49C1V9lcC1whoGRQE",
+  apiKey: " ", //coloque a API key aqui
   authDomain: "mindcode-01.firebaseapp.com",
   projectId: "mindcode-01",
   storageBucket: "mindcode-01.firebasestorage.app",
