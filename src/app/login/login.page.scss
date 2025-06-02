@@ -1,8 +1,8 @@
 .login-content {
     --background: #2f324e;
-    position: relative; 
+    position: relative;
     height: 100%;
-  
+
     .linha-login {
       border: 0;
       border-top: 1px solid #2b2b2b; /* Cor da linha */
@@ -10,7 +10,7 @@
       margin-bottom: 20px;
       width: 100%;
     }
-   
+
     .login-box {
       position: absolute;
       bottom: 0;
@@ -21,8 +21,8 @@
       border-radius: 30px 30px 0 0;
       box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.26);
       text-align: center;
-      height: 80vh; 
-  
+      height: 80vh;
+
       h1 {
         font-size: 24px;
         font-weight: bold;
@@ -30,19 +30,19 @@
         color: #000;
         font-weight: 800;
       }
-  
+
       ion-item {
         margin-bottom: 35px;
         --border-color: transparent;
         --background: transparent;
-  
+
         ion-icon {
           font-size: 20px;
           color: #000;
         }
-  
+
       }
-  
+
       ion-input {
         font-size: 14px;
         color: #000;
@@ -54,7 +54,7 @@
       .linkSenha{
         font-weight: bold;
       }
-  
+
       .btn-acessar {
         margin-bottom: 25px;
         background: #CE5EED;
@@ -64,12 +64,12 @@
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         text-transform: none; /*Tira a caixa alta do texto*/
       }
-  
+
       .login-text {
         margin-top: 15px;
         font-size: 14px;
         color: #000;
-  
+
         a {
           font-weight: bold;
           color: #c471f5;
@@ -78,3 +78,12 @@
       }
     }
   }
+
+  ::ng-deep .custom-toast {
+  --background: #CE5EED !important;
+  --color: #fff;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
