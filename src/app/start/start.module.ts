@@ -8,11 +8,14 @@ import { StartPageRoutingModule } from './start-routing.module';
 
 import { StartPage } from './start.page';
 
+import { RouterModule } from '@angular/router';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    RouterModule,
     StartPageRoutingModule
   ],
   declarations: [StartPage]

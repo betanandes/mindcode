@@ -3,26 +3,61 @@
     <h1>Cadastro</h1>
     <hr style="background-color: black;">
 
-    <form>
-      <ion-item lines="none">
-        <ion-icon name="person" slot="start"></ion-icon>
-        <ion-input placeholder="Escolha um usuário"></ion-input>
-      </ion-item>
+<form (ngSubmit)="register()">
 
-      <ion-item lines="none">
-        <ion-icon name="at" slot="start"></ion-icon>
-        <ion-input type="email" placeholder="Escolha um e-mail"></ion-input>
-      </ion-item>
+  <!-- Username -->
+  <div class="form-group">
+    <ion-item lines="none">
+      <ion-icon name="person" slot="start"></ion-icon>
+      <ion-input
+        placeholder="Escolha um usuário"
+        [(ngModel)]="username"
+        name="username"
+        type="text"
+      ></ion-input>
+    </ion-item>
+    <p class="error-message" *ngIf="usernameError">{{ usernameError }}</p>
+  </div>
 
-      <ion-item lines="none">
-        <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
-        <ion-input type="password" placeholder="Escolha uma senha" ></ion-input>
-      </ion-item>
+  <!-- Email -->
+  <div class="form-group">
+    <ion-item lines="none">
+      <ion-icon name="at" slot="start"></ion-icon>
+      <ion-input
+        placeholder="Escolha um e-mail"
+        [(ngModel)]="email"
+        name="email"
+        type="email"
+      ></ion-input>
+    </ion-item>
+    <p class="error-message" *ngIf="emailError">{{ emailError }}</p>
+  </div>
 
-      <ion-button expand="block" fill="clear" class="btn-cadastrar">
-        Cadastrar
-      </ion-button>
-    </form>
+  <!-- Senha -->
+  <div class="form-group">
+    <ion-item lines="none">
+      <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+      <ion-input
+        placeholder="Escolha uma senha"
+        [(ngModel)]="password"
+        name="password"
+        type="password"
+      ></ion-input>
+    </ion-item>
+    <p class="error-message" *ngIf="passwordError">{{ passwordError }}</p>
+  </div>
+
+  <!-- Botão -->
+  <ion-button
+    type="submit"
+    expand="block"
+    fill="clear"
+    class="btn-cadastrar"
+  >
+    Cadastrar
+  </ion-button>
+</form>
+
 
     <p class="login-text">
       Já possui conta? <a routerLink="/login">Faça login.</a>

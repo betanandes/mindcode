@@ -6,12 +6,24 @@
     <form>
       <ion-item lines="none">
         <ion-icon name="person" slot="start"></ion-icon>
-        <ion-input placeholder="Usuário"></ion-input>
+        <ion-input
+          [(ngModel)]="email"
+          name="email"
+          type="email"
+          placeholder="Usuário"
+          required>
+        </ion-input>
       </ion-item>
 
       <ion-item lines="none">
-        <ion-icon name="at" slot="start"></ion-icon>
-        <ion-input type="email" placeholder="Senha"></ion-input>
+        <ion-icon name="lock-closed" slot="start"></ion-icon>
+        <ion-input
+          [(ngModel)]="password"
+          name="password"
+          type="password"
+          placeholder="Senha"
+          required>
+        </ion-input>
       </ion-item>
 
       <ion-item lines="none" class="linkSenha">
@@ -20,7 +32,7 @@
         </ion-router-link>
       </ion-item>
 
-      <ion-button expand="block" fill="clear" class="btn-acessar" routerLink="/start">
+      <ion-button expand="block" fill="clear" class="btn-acessar" (click)="login()">
         Acessar
       </ion-button>
     </form>
