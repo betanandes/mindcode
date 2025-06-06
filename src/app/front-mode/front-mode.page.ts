@@ -8,9 +8,11 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./front-mode.page.scss'],
 })
 export class FrontModePage {
-
   timeLeft: number = 15;
   interval: any;
+  score: number = 0;
+  currentQuestionIndex = 0;
+  selectedOption: string | null = null;
 
   questions = [
     {
@@ -60,9 +62,6 @@ export class FrontModePage {
     }
   ];
 
-  currentQuestionIndex = 0;
-  selectedOption: string | null = null;
-
   get currentQuestion() {
     return this.questions[this.currentQuestionIndex];
   }
@@ -108,6 +107,11 @@ export class FrontModePage {
     this.selectedOption = letter;
     this.clearTimer();
 
+    // Verifica se acertou
+    if (letter === this.currentQuestion.correct) {
+      this.score += 10;
+    }
+
     setTimeout(() => {
       this.selectedOption = null;
       if (this.currentQuestionIndex < this.questions.length - 1) {
@@ -124,10 +128,13 @@ export class FrontModePage {
     this.currentQuestionIndex = 0;
     this.selectedOption = null;
     this.timeLeft = 15;
+    this.score = 0;
   }
 
   finishQuiz() {
     this.clearTimer();
-    this.navCtrl.navigateForward('/points');
+    this.navCtrl.navigateForward('/points', {
+      queryParams: { score: this.score }
+    });
   }
 }
