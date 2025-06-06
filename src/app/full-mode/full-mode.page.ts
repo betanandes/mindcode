@@ -11,6 +11,9 @@ export class FullModePage {
 
   timeLeft: number = 15;
   interval: any;
+  score: number = 0;
+  currentQuestionIndex = 0;
+  selectedOption: string | null = null;
 
   questions = [
     {
@@ -60,14 +63,11 @@ export class FullModePage {
     }
   ];
 
-  currentQuestionIndex = 0;
-  selectedOption: string | null = null;
+  constructor(private navCtrl: NavController) {}
 
   get currentQuestion() {
     return this.questions[this.currentQuestionIndex];
   }
-
-  constructor(private navCtrl: NavController) {}
 
   ionViewWillEnter() {
     this.resetQuiz();
@@ -108,6 +108,11 @@ export class FullModePage {
     this.selectedOption = letter;
     this.clearTimer();
 
+    // Lógica de pontuação
+    if (letter === this.currentQuestion.correct) {
+      this.score += 10;
+    }
+
     setTimeout(() => {
       this.selectedOption = null;
       if (this.currentQuestionIndex < this.questions.length - 1) {
@@ -124,10 +129,13 @@ export class FullModePage {
     this.currentQuestionIndex = 0;
     this.selectedOption = null;
     this.timeLeft = 15;
+    this.score = 0;
   }
 
   finishQuiz() {
     this.clearTimer();
-    this.navCtrl.navigateForward('/points');
+    this.navCtrl.navigateForward('/points', {
+      queryParams: { score: this.score }
+    });
   }
 }

@@ -11,6 +11,7 @@ export class BackModePage {
 
   timeLeft: number = 15;
   interval: any;
+  score: number = 0; // <--- adiciona aqui a pontuação
 
   questions = [
     {
@@ -108,6 +109,11 @@ export class BackModePage {
     this.selectedOption = letter;
     this.clearTimer();
 
+    // Aqui você deve conferir se acertou e somar pontos igual no front
+    if (letter === this.currentQuestion.correct) {
+      this.score += 10;
+    }
+
     setTimeout(() => {
       this.selectedOption = null;
       if (this.currentQuestionIndex < this.questions.length - 1) {
@@ -124,10 +130,14 @@ export class BackModePage {
     this.currentQuestionIndex = 0;
     this.selectedOption = null;
     this.timeLeft = 15;
+    this.score = 0; // reseta a pontuação
   }
 
   finishQuiz() {
     this.clearTimer();
-    this.navCtrl.navigateForward('/points');
+    // passa a pontuação via queryParams para a página points igual no front
+    this.navCtrl.navigateForward('/points', {
+      queryParams: { score: this.score }
+    });
   }
 }
