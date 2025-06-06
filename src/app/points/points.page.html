@@ -1,0 +1,18 @@
+<ion-content class="ion-padding points-page">
+  <div class="top-bar">
+    <ion-icon name="close" class="close-icon" (click)="goToMainScreen()"></ion-icon>
+  </div>
+
+  <div class="content" style="margin-top: 8rem;">
+    <h2>Parabéns, você terminou!</h2>
+    <p style="margin-top: 3rem;">Sua pontuação é:</p>
+
+    <div class="score-box">
+      <span class="score">{{ pontuacao }}</span>
+    </div>
+
+    <div class="emoji-container">
+      <img src="assets/logo/joia.png" alt="emoji" class="emoji" style="width: 300px;" />
+    </div>
+  </div>
+</ion-content>
