@@ -19,7 +19,7 @@ export class LoginPage implements OnInit {
   constructor(
     private router: Router,
     private toastController: ToastController,
-    private authService: AuthService 
+    private authService: AuthService
   ) {}
 
   ngOnInit() {}
@@ -38,7 +38,7 @@ export class LoginPage implements OnInit {
       this.authService.setUser(userCredential.user);
 
       this.presentToast('Login realizado com sucesso!');
-      this.router.navigate(['/start-page']);
+      this.router.navigate(['/start']);
     } catch (error: any) {
       console.error('Erro ao logar:', error);
       switch (error.code) {
