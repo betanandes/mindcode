@@ -50,6 +50,10 @@ const routes: Routes = [
     path: 'points',
     loadChildren: () => import('./points/points.module').then( m => m.PointsPageModule)
   },
+  {
+    path: 'ranking',
+    loadChildren: () => import('./ranking/ranking.module').then( m => m.RankingPageModule)
+  },
 
 
 ];
