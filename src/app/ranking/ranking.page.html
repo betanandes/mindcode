@@ -1,13 +1,48 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>ranking</ion-title>
-  </ion-toolbar>
+<ion-header class="ranking-header">
+  <div class="header-container">
+    <ion-icon name="arrow-back-outline" routerLink="/main-screen" class="back-icon"></ion-icon>
+    <h1 class="page-title">Ranking</h1>
+  </div>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">ranking</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ranking-page" color="light">
+  <div class="top-user-card">
+    <div class="avatar-wrapper">
+      <img class="avatar" [src]="ranking[0]?.photoURL || 'assets/default-avatar.png'" />
+      <img class="badge" src="assets/icon/diamond.png" alt="Badge" />
+    </div>
+    <div class="top-score">{{ ranking[0]?.score }}</div>
+  </div>
+
+
+
+  <div class="ranking-list">
+    <div class="ranking-item" *ngFor="let user of ranking.slice(1); index as i">
+      <div class="rank">0{{ i + 2 }}</div>
+      <img class="avatar" [src]="user.photoURL || 'assets/default-avatar.png'" />
+      <div class="username">{{ user.displayName || 'usuário' }}</div>
+      <div class="score">{{ user.score }}</div>
+      <img class="trophy" src="assets/icon/trophy.png" />
+    </div>
+  </div>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar class="bottom-bar">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/main-screen">
+        <ion-icon name="home-outline" style="color: white;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons style="justify-content: center;">
+      <ion-button routerLink="/ranking">
+        <ion-icon name="trophy-outline" style="color: white;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/config-page">
+        <ion-icon name="settings-outline" style="color: white;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
