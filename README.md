@@ -45,7 +45,6 @@
 - [SCSS](https://sass-lang.com/)  
 - [Firebase Authentication](https://firebase.google.com/products/auth)  
 - [Firebase Firestore](https://firebase.google.com/products/firestore)  
-- [Supabase](https://supabase.com/)  
 
 ---
 
