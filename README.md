@@ -30,9 +30,9 @@
 ## 🧪 Em andamento
 
 🛠️ Integração com **Firestore Database** para ranking e pontuação  
-🛠️ Acúmulo de pontos por usuário autenticado 
-🛠️ Tela de ranking com dados em tempo real 
-🛠️ Validação de pontuação por dificuldade   
+🛠️ Acúmulo de pontos por usuário autenticado<br>
+🛠️ Tela de ranking com dados em tempo real<br>
+🛠️ Validação de pontuação por dificuldade<br>
 🛠️ Testes unitários e e2e com cobertura automatizada  
 
 ---
