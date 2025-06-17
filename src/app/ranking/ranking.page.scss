@@ -15,12 +15,12 @@ ion-content {
   align-items: center;
   width: 100%;
   max-width: 350px;
-  margin: 50px auto 20px auto; // top mais alto pro espaço do badge
+  margin: 20px auto 20px auto;
   background: white;
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  position: relative; // necessário pra posicionar o badge corretamente
+  position: relative;
 }
 
 .avatar-wrapper {
@@ -30,6 +30,8 @@ ion-content {
 }
 
 .top-user-card .avatar {
+  position: relative;
+  left: -5px;
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -37,6 +39,7 @@ ion-content {
   object-fit: cover;
   margin-bottom: 12px;
 }
+
 
 .top-user-card .badge {
   position: absolute;
@@ -46,6 +49,16 @@ ion-content {
   height: 32px;
   z-index: 10;
 }
+
+.top-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+  left: -5px;
+  margin-top: 8px;
+  color: #333;
+  text-align: center;
+}
+
 
 .top-user-card .top-score {
   font-size: 28px;
@@ -67,7 +80,14 @@ ion-content {
   padding: 8px 16px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 10px;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
 }
+
 
 .rank {
   font-size: 18px;

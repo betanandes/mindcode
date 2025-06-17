@@ -13,24 +13,21 @@ export class RankingPage implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    // Aqui você vai puxar os dados do Firebase depois
-    this.ranking = [
-      {
-        displayName: 'Top 1',
-        photoURL: 'assets/imgs/top1.png',
-        score: 1000,
-      },
-      {
-        displayName: 'Usuário 2',
-        photoURL: 'assets/imgs/user2.png',
-        score: 900,
-      },
-      {
-        displayName: 'Usuário 3',
-        photoURL: 'assets/imgs/user3.png',
-        score: 900,
-      },
-      // ... até 10
-    ];
+
+      this.ranking = [
+    {
+      displayName: 'LunaShadow',
+      photoURL: 'assets/img/user10.jpeg',
+      score: 1220,
+    },
+    { displayName: 'BlazeBelle', photoURL: 'assets/img/user4.jpeg', score: 950 },
+    { displayName: 'PixelVixen', photoURL: 'assets/img/user2.jpeg', score: 920 },
+    { displayName: 'NovaQueen', photoURL: 'assets/img/user3.jpeg', score: 890 },
+    { displayName: 'ArcadeEmpress', photoURL: 'assets/img/user5.jpeg', score: 870 },
+    { displayName: 'CyberSiren', photoURL: 'assets/img/user1.jpeg', score: 850 },
+    { displayName: 'Valkyra', photoURL: 'assets/img/user6.jpeg', score: 830 },
+    { displayName: 'PixelPixie', photoURL: 'assets/img/user7.jpeg', score: 810 },
+    { displayName: 'RogueRose', photoURL: 'assets/img/user8.jpeg', score: 790 },
+  ];
   }
 }

@@ -7,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-screen.page.scss'],
 })
 export class MainScreenPage implements OnInit {
+  pontuacaoTotal: number = 0;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
+    this.carregarPontuacao();
   }
 
+  ionViewWillEnter() {
+    this.carregarPontuacao();
+  }
+
+  carregarPontuacao() {
+    const pontuacao = localStorage.getItem('pontuacaoTotal');
+    this.pontuacaoTotal = pontuacao ? Number(pontuacao) : 0;
+  }
 }

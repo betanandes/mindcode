@@ -8,13 +8,18 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./points.page.scss'],
 })
 export class PointsPage {
-  pontuacao: string = '0';  // inicializa com '0' ao invés de '000'
+  pontuacao: string = '0';
 
   constructor(private route: ActivatedRoute, private router: Router) {
     this.route.queryParams.subscribe(params => {
       if (params['score']) {
-        // Garante que pontuacao seja string e formata se quiser (ex: sempre 2 dígitos)
-        this.pontuacao = String(params['score']);
+        const novaPontuacao = Number(params['score']) || 0;
+        const pontuacaoSalva = Number(localStorage.getItem('pontuacaoTotal')) || 0;
+        const pontuacaoAtualizada = pontuacaoSalva + novaPontuacao;
+
+        localStorage.setItem('pontuacaoTotal', pontuacaoAtualizada.toString());
+
+        this.pontuacao = String(novaPontuacao);
       }
     });
   }

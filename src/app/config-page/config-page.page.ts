@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { AuthService } from '../../auth.service'; // ajuste caminho
 import { User, updateProfile } from 'firebase/auth';
+import { AlertController } from '@ionic/angular';
 // import { auth } from '../../firebase';
 
 @Component({
@@ -21,23 +22,26 @@ export class ConfigPagePage implements OnInit {
   username: string = '';
   about: string = '';
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private alertCtrl: AlertController) {}
+
 
   ngOnInit() {
-    this.currentUser = this.authService.getUser();
+  this.currentUser = this.authService.getUser();
 
-    if (this.currentUser) {
-      // Se tiver foto, carrega
-      this.avatarUrl = this.currentUser.photoURL || this.avatarUrl;
-      this.username = this.currentUser.displayName || '';
-
-      // Você pode carregar o "sobre você" de algum banco, aqui vamos usar localStorage como exemplo
-      const aboutStorage = localStorage.getItem('about');
-      this.about = aboutStorage || '';
-
-      this.isCustomImage = !!this.currentUser.photoURL;
-    }
+  // Carregar do Firebase (se estiver logado)
+  if (this.currentUser) {
+    this.avatarUrl = this.currentUser.photoURL || localStorage.getItem('fotoUsuario') || this.avatarUrl;
+    this.username = this.currentUser.displayName || localStorage.getItem('nomeUsuario') || '';
+  } else {
+    // Carregar apenas do localStorage
+    this.avatarUrl = localStorage.getItem('fotoUsuario') || this.avatarUrl;
+    this.username = localStorage.getItem('nomeUsuario') || '';
   }
+
+  this.about = localStorage.getItem('about') || '';
+  this.isCustomImage = this.avatarUrl !== 'https://ionicframework.com/docs/img/demos/avatar.svg';
+}
+
 
   onFileSelected(event: Event) {
     const input = event.target as HTMLInputElement;
@@ -70,21 +74,39 @@ export class ConfigPagePage implements OnInit {
     }
   }
 
-  async saveProfile() {
-    if (!this.currentUser) return;
-
+ async saveProfile() {
+  if (this.currentUser) {
     try {
       await updateProfile(this.currentUser, {
         displayName: this.username,
+        photoURL: this.avatarUrl
       });
-
-      // Salvar "Sobre você" no localStorage (ou Firestore, se tiver)
-      localStorage.setItem('about', this.about);
-
-      alert('Perfil atualizado com sucesso!');
     } catch (error) {
-      console.error('Erro ao atualizar perfil', error);
-      alert('Erro ao salvar o perfil. Tente novamente.');
+      console.error('Erro ao atualizar no Firebase:', error);
     }
   }
+
+  // Salvar localmente
+  localStorage.setItem('nomeUsuario', this.username);
+  localStorage.setItem('fotoUsuario', this.avatarUrl);
+  localStorage.setItem('about', this.about);
+
+
+  this.showSuccessAlert();
+}
+
+
+async showSuccessAlert() {
+  const alert = await this.alertCtrl.create({
+    header: '✅ Sucesso!',
+    message: 'Seu perfil foi atualizado com sucesso!',
+    cssClass: 'custom-alert',
+    buttons: ['OK'],
+    mode: 'ios',
+    animated: true
+  });
+
+  await alert.present();
+}
+
 }

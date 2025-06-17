@@ -11,6 +11,7 @@
       <img class="avatar" [src]="ranking[0]?.photoURL || 'assets/default-avatar.png'" />
       <img class="badge" src="assets/icon/diamond.png" alt="Badge" />
     </div>
+    <div class="top-name">{{ ranking[0]?.displayName || 'Usuário' }}</div>
     <div class="top-score">{{ ranking[0]?.score }}</div>
   </div>
 
