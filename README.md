@@ -1,7 +1,6 @@
 # 🧠 MindCode - Quiz Tech Interativo
 
 [![Status](https://img.shields.io/badge/status-em%20andamento-yellow)](#)  
-[![License](https://img.shields.io/badge/license-MIT-blue)](#)  
 [![Ionic](https://img.shields.io/badge/Ionic-7%2B-blue.svg?logo=ionic)](https://ionicframework.com/)  
 [![Angular](https://img.shields.io/badge/Angular-16%2B-red.svg?logo=angular)](https://angular.io/)  
 [![Firebase](https://img.shields.io/badge/Firebase-em%20andamento-yellow?logo=firebase)](https://firebase.google.com/)  
